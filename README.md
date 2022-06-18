@@ -41,7 +41,7 @@ The prediction Web App uses the following Technologies to work well:
 ---
 
 ## Model Links
-To Be updated...
+1. Diabetes Prediction Model: [github](https://github.com/Shreyas-SAS/Diabetes-prediction-model)
 
 ---
 ## File Storage
