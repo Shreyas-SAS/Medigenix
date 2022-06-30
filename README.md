@@ -16,11 +16,13 @@ Multiple Disease prediction Web app hosting ML model generated Prediction system
 
 ## Sections of Web App
 
-1) Multi-disease prediction using symptoms
-2) Acurate disease prediction model for Critical Disease Analysis
+<!-- 1) Multi-disease prediction using symptoms -->
+Acurate disease prediction model for Critical Disease Analysis
    * Diabetes Prediction Model
    * Heart Disease Prediction Model
    * Parkinsons Disease Prediction Model
+   
+   Additions pending:
    * Retinal Disease Prediction Model
    * Breast Cancer Prediction Model
    * Skin Caancer Prediction Model
