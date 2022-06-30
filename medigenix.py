@@ -9,34 +9,28 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-
 # loading the saved models
-
-diabetes_model = pickle.load(open('D:/Coding/Projects/Medigenix/trained_models/diabetes_model.sav', 'rb'))
-
-heart_disease_model = pickle.load(open('D:/Coding/Projects/Medigenix/trained_models/heart_disease_model.sav','rb'))
-
-parkinsons_model = pickle.load(open('D:/Coding/Projects/Medigenix/trained_models/parkinsons_model.sav', 'rb'))
-
-
+diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
+heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
+parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
 # sidebar for navigation
 with st.sidebar:
     
     selected = option_menu('Multiple Disease Prediction System',
                           
-                          ['Diabetes Prediction',
-                           'Heart Disease Prediction',
-                           'Parkinsons Prediction'],
+                          ['Diabetes',
+                           'Heart Disease',
+                           'Parkinsons Disease'],
                           icons=['activity','heart','person'],
                           default_index=0)
     
     
 # Diabetes Prediction Page
-if (selected == 'Diabetes Prediction'):
+if (selected == 'Diabetes'):
     
     # page title
-    st.title('Diabetes Prediction using ML')
+    st.title('Diabetes Prediction')
     
     
     # getting the input data from the user
@@ -76,9 +70,9 @@ if (selected == 'Diabetes Prediction'):
         diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0] == 1):
-          diab_diagnosis = 'The person is diabetic'
+          diab_diagnosis = 'patient is highly probable to be diabetic'
         else:
-          diab_diagnosis = 'The person is not diabetic'
+          diab_diagnosis = 'The person is likely not diabetic'
         
     st.success(diab_diagnosis)
 
@@ -86,10 +80,10 @@ if (selected == 'Diabetes Prediction'):
 
 
 # Heart Disease Prediction Page
-if (selected == 'Heart Disease Prediction'):
+if (selected == 'Heart Disease'):
     
     # page title
-    st.title('Heart Disease Prediction using ML')
+    st.title('Heart Disease Prediction')
     
     col1, col2, col3 = st.columns(3)
     
@@ -144,9 +138,9 @@ if (selected == 'Heart Disease Prediction'):
         heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal]])                          
         
         if (heart_prediction[0] == 1):
-          heart_diagnosis = 'The person is having heart disease'
+          heart_diagnosis = 'The person is likely to be having a heart disease'
         else:
-          heart_diagnosis = 'The person does not have any heart disease'
+          heart_diagnosis = 'The person is likely not to have any heart disease'
         
     st.success(heart_diagnosis)
         
@@ -154,10 +148,10 @@ if (selected == 'Heart Disease Prediction'):
     
 
 # Parkinson's Prediction Page
-if (selected == "Parkinsons Prediction"):
+if (selected == "Parkinsons Disease"):
     
     # page title
-    st.title("Parkinson's Disease Prediction using ML")
+    st.title("Parkinson's Disease Prediction")
     
     col1, col2, col3, col4, col5 = st.columns(5)  
     
@@ -237,7 +231,7 @@ if (selected == "Parkinsons Prediction"):
         parkinsons_prediction = parkinsons_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]])                          
         
         if (parkinsons_prediction[0] == 1):
-          parkinsons_diagnosis = "The person has Parkinson's disease"
+          parkinsons_diagnosis = "The person is likely to have Parkinson's disease"
         else:
           parkinsons_diagnosis = "The person does not have Parkinson's disease"
         
