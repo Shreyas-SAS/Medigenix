@@ -1,5 +1,8 @@
 # Medigenix
 
+The model has been deployed using Streamlit Cloud at [Medigenix](https://shreyas-sas-medigenix-medigenix-fvafo5.streamlitapp.com/) <br>
+alt: https://shreyas-sas-medigenix-medigenix-fvafo5.streamlitapp.com/ 
+
 Multiple Disease prediction Web app hosting ML model generated Prediction systems to identify diseases accurately based on user experienced symptoms and report values. 
 
 ---
@@ -37,8 +40,8 @@ The prediction Web App uses the following Technologies to work well:
 * Pandas (ML Model)
 * Numpy (ML Model)
 * SciKit Learn (ML Model)
-* MatplotLib (ML model)
-* Seaborn (ML Model)
+* Pickle (Web App)
+* streamlit-option-menu (Web App)
 
 ---
 
